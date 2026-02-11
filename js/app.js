@@ -251,6 +251,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ──── Track Item & Card Clicks ────
+    // ──── Track Options Dropdown ────
+    let activeDropdown = null;
+
+    function createDropdown() {
+        const dropdown = document.createElement('div');
+        dropdown.className = 'track-dropdown';
+        dropdown.innerHTML = `
+            <div class="dropdown-item"><i class="bi bi-collection-play"></i> Добавить в плейлист</div>
+            <div class="dropdown-item"><i class="bi bi-info-circle"></i> О треке</div>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-item"><i class="bi bi-download"></i> Скачать</div>
+            <div class="dropdown-item"><i class="bi bi-share"></i> Поделиться</div>
+        `;
+        document.body.appendChild(dropdown);
+        return dropdown;
+    }
+
+    const trackDropdown = createDropdown();
+
     document.addEventListener('click', (e) => {
         // Quick cards with page navigation
         const quickCard = e.target.closest('.quick-card[data-page]');
@@ -266,9 +285,34 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // Track Options Button
+        const optionsBtn = e.target.closest('.track-options-btn');
+        if (optionsBtn) {
+            e.stopPropagation();
+            const rect = optionsBtn.getBoundingClientRect();
+            trackDropdown.style.top = `${rect.bottom + window.scrollY + 5}px`;
+
+            // Check if dropdown goes off screen (right side)
+            if (rect.left + 200 > window.innerWidth) {
+                trackDropdown.style.left = `${rect.right - 200}px`;
+            } else {
+                trackDropdown.style.left = `${rect.left}px`;
+            }
+
+            trackDropdown.classList.add('active');
+            activeDropdown = trackDropdown;
+            return;
+        }
+
+        // Close dropdown on outside click
+        if (activeDropdown && !e.target.closest('.track-dropdown')) {
+            activeDropdown.classList.remove('active');
+            activeDropdown = null;
+        }
+
         // Music cards with track loading
         const card = e.target.closest('[data-track]');
-        if (card) {
+        if (card && !e.target.closest('.track-action-btn') && !e.target.closest('.track-options-btn')) {
             const trackId = card.dataset.track;
             loadTrack(trackId);
         }

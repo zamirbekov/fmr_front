@@ -770,6 +770,75 @@ input {
     color: var(--accent);
 }
 
+.track-options-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.track-options-btn:hover {
+    background: var(--bg-surface);
+    color: var(--text-primary);
+}
+
+/* ═══ Dropdown Menu ═══ */
+.track-dropdown {
+    position: fixed;
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card-hover);
+    padding: 8px 0;
+    width: 200px;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid var(--border-color);
+}
+
+.track-dropdown.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    width: 100%;
+    color: var(--text-primary);
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.dropdown-item:hover {
+    background: var(--bg-surface);
+    color: var(--accent);
+}
+
+.dropdown-item i {
+    font-size: 16px;
+    color: var(--text-muted);
+}
+
+.dropdown-item:hover i {
+    color: var(--accent);
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: var(--border-color);
+    margin: 4px 0;
+}
+
 /* ═══ Favorites Hero ═══ */
 .favorites-hero {
     position: relative;
