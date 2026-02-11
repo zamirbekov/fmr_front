@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FMR Music — музыкальный портал">
+    <title>FMR Music</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <aside class="sidebar d-none d-md-flex" id="sidebar">
+        <div class="sidebar-logo"><i class="bi bi-soundwave"></i><span>FMR Music</span></div>
+        <nav class="sidebar-nav">
+            <a href="#" class="sidebar-link active" data-page="home"><i
+                    class="bi bi-house-heart-fill"></i><span>Главная</span></a>
+            <a href="#" class="sidebar-link" data-page="tracks"><i
+                    class="bi bi-music-note-list"></i><span>Треки</span></a>
+            <a href="#" class="sidebar-link" data-page="genres"><i
+                    class="bi bi-grid-3x3-gap-fill"></i><span>Жанры</span></a>
+            <a href="#" class="sidebar-link" data-page="new-releases"><i
+                    class="bi bi-stars"></i><span>Новинки</span></a>
+            <a href="#" class="sidebar-link" data-page="channels"><i
+                    class="bi bi-broadcast-pin"></i><span>Каналы</span></a>
+            <div class="sidebar-divider"></div>
+            <p class="sidebar-section-title">Моя музыка</p>
+            <a href="#" class="sidebar-link" data-page="favorites"><i class="bi bi-heart-fill"></i><span>Мне
+                    нравится</span></a>
+            <a href="#" class="sidebar-link" data-page="playlists"><i
+                    class="bi bi-collection-play-fill"></i><span>Плейлисты</span></a>
+            <a href="#" class="sidebar-link" data-page="saved"><i
+                    class="bi bi-bookmark-star-fill"></i><span>Избранное</span></a>
+            <a href="#" class="sidebar-link" data-page="history"><i
+                    class="bi bi-clock-history"></i><span>История</span></a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="user-avatar"><i class="bi bi-person-circle"></i></div><span>Гость</span>
+        </div>
+    </aside>
+
+    <main class="main-content" id="mainContent">
+        <header class="mobile-header d-md-none">
+            <div class="d-flex align-items-center justify-content-between w-100 px-3">
+                <div class="mobile-logo"><i class="bi bi-soundwave"></i> FMR</div>
+                <div class="mobile-header-actions">
+                    <button class="btn-icon" id="searchToggle"><i class="bi bi-search"></i></button>
+                    <button class="btn-icon"><i class="bi bi-bell"></i></button>
+                </div>
+            </div>
+        </header>
+
+        <section class="page active" data-page="home" id="pageHome">
+            <div class="search-bar d-none d-md-flex">
+                <i class="bi bi-search"></i>
+                <input type="text" placeholder="Поиск треков, артистов, альбомов..." id="searchInput">
+            </div>
+
+            <div class="section-block">
+                <h2 class="section-title"><i class="bi bi-music-note-beamed text-accent"></i> Моя музыка</h2>
+                <div class="quick-grid">
+                    <div class="quick-card" data-page="history">
+                        <div class="quick-card-img" style="background: linear-gradient(135deg, #667eea, #764ba2);"><i
+                                class="bi bi-clock-history"></i></div>
+                        <div class="quick-card-info"><span class="quick-card-title">История</span></div><button
+                            class="quick-play-btn"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+                    <div class="quick-card" data-page="favorites">
+                        <div class="quick-card-img" style="background: linear-gradient(135deg, #f093fb, #f5576c);"><i
+                                class="bi bi-heart-fill"></i></div>
+                        <div class="quick-card-info"><span class="quick-card-title">Мне нравится</span></div><button
+                            class="quick-play-btn"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+                    <div class="quick-card" data-page="saved">
+                        <div class="quick-card-img" style="background: linear-gradient(135deg, #4facfe, #00f2fe);"><i
+                                class="bi bi-bookmark-star-fill"></i></div>
+                        <div class="quick-card-info"><span class="quick-card-title">Избранное</span></div><button
+                            class="quick-play-btn"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+                    <div class="quick-card" data-page="playlists">
+                        <div class="quick-card-img" style="background: linear-gradient(135deg, #fa709a, #fee140);"><i
+                                class="bi bi-collection-play-fill"></i></div>
+                        <div class="quick-card-info"><span class="quick-card-title">Мои плейлисты</span></div><button
+                            class="quick-play-btn"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="bi bi-fire text-danger"></i> Популярное сейчас</h2>
+                    <a href="#" class="see-all-link" data-page="tracks">Все <i class="bi bi-chevron-right"></i></a>
+                </div>
+                <div class="cards-scroll">
+                    <div class="music-card card-3d" data-track="7">
+                        <div class="card-cover" style="background: linear-gradient(135deg, #ff6b6b, #ee5a24);"><i
+                                class="bi bi-vinyl-fill card-cover-icon"></i>
+                            <div class="card-play-overlay"><button class="card-play-btn"><i
+                                        class="bi bi-play-fill"></i></button></div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Neon Dreams</h3>
+                            <p class="card-artist">DJ Pulse</p>
+                        </div>
+                    </div>
+                    <div class="music-card card-3d" data-track="8">
+                        <div class="card-cover" style="background: linear-gradient(135deg, #a29bfe, #6c5ce7);"><i
+                                class="bi bi-vinyl-fill card-cover-icon"></i>
+                            <div class="card-play-overlay"><button class="card-play-btn"><i
+                                        class="bi bi-play-fill"></i></button></div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Midnight City</h3>
+                            <p class="card-artist">Luna Wave</p>
+                        </div>
+                    </div>
+                    <div class="music-card card-3d" data-track="9">
+                        <div class="card-cover" style="background: linear-gradient(135deg, #fd79a8, #e84393);"><i
+                                class="bi bi-vinyl-fill card-cover-icon"></i>
+                            <div class="card-play-overlay"><button class="card-play-btn"><i
+                                        class="bi bi-play-fill"></i></button></div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Розовый закат</h3>
+                            <p class="card-artist">АИГЕЛ</p>
+                        </div>
+                    </div>
+                    <div class="music-card card-3d" data-track="10">
+                        <div class="card-cover" style="background: linear-gradient(135deg, #00cec9, #0984e3);"><i
+                                class="bi bi-vinyl-fill card-cover-icon"></i>
+                            <div class="card-play-overlay"><button class="card-play-btn"><i
+                                        class="bi bi-play-fill"></i></button></div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Ocean Waves</h3>
+                            <p class="card-artist">Synthex</p>
+                        </div>
+                    </div>
+                    <div class="music-card card-3d" data-track="11">
+                        <div class="card-cover" style="background: linear-gradient(135deg, #fdcb6e, #e17055);"><i
+                                class="bi bi-vinyl-fill card-cover-icon"></i>
+                            <div class="card-play-overlay"><button class="card-play-btn"><i
+                                        class="bi bi-play-fill"></i></button></div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Golden Hour</h3>
+                            <p class="card-artist">SunBeam</p>
+                        </div>
+                    </div>
+                    <div class="music-card card-3d" data-track="12">
+                        <div class="card-cover" style="background: linear-gradient(135deg, #55efc4, #00b894);"><i
+                                class="bi bi-vinyl-fill card-cover-icon"></i>
+                            <div class="card-play-overlay"><button class="card-play-btn"><i
+                                        class="bi bi-play-fill"></i></button></div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Forest Rain</h3>
+                            <p class="card-artist">NatureSound</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="bi bi-people-fill text-info"></i> Популярные исполнители</h2>
+                    <a href="#" class="see-all-link">Все <i class="bi bi-chevron-right"></i></a>
+                </div>
+                <div class="cards-scroll">
+                    <div class="music-card card-3d">
+                        <div class="card-cover" style="background: linear-gradient(135deg, #667eea, #764ba2);"><i
+                                class="bi bi-person-fill card-cover-icon"></i></div>
+                        <div class="card-body">
+                            <h3 class="card-title">DJ Pulse</h3>
+                            <p class="card-artist">Электро</p>
+                        </div>
+                    </div>
+                    <div class="music-card card-3d">
+                        <div class="card-cover" style="background: linear-gradient(135deg, #f093fb, #f5576c);"><i
+                                class="bi bi-person-fill card-cover-icon"></i></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Luna Wave</h3>
+                            <p class="card-artist">Synthwave</p>
+                        </div>
+                    </div>
+                    <div class="music-card card-3d">
+                        <div class="card-cover" style="background: linear-gradient(135deg, #4facfe, #00f2fe);"><i
+                                class="bi bi-person-fill card-cover-icon"></i></div>
+                        <div class="card-body">
+                            <h3 class="card-title">АИГЕЛ</h3>
+                            <p class="card-artist">Альтернатива</p>
+                        </div>
+                    </div>
+                    <div class="music-card card-3d">
+                        <div class="card-cover" style="background: linear-gradient(135deg, #fa709a, #fee140);"><i
+                                class="bi bi-person-fill card-cover-icon"></i></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Synthex</h3>
+                            <p class="card-artist">Ambient</p>
+                        </div>
+                    </div>
+                    <div class="music-card card-3d">
+                        <div class="card-cover" style="background: linear-gradient(135deg, #a18cd1, #fbc2eb);"><i
+                                class="bi bi-person-fill card-cover-icon"></i></div>
+                        <div class="card-body">
+                            <h3 class="card-title">Cosmos</h3>
+                            <p class="card-artist">Электроника</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-block">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="bi bi-stars text-warning"></i> Свежие релизы</h2>
+                    <a href="#" class="see-all-link" data-page="new-releases">Все <i
+                            class="bi bi-chevron-right"></i></a>
+                </div>
+                <div class="cards-scroll">
+                    <div class="music-card card-3d" data-track="13">
+                        <div class="card-cover" style="background: linear-gradient(135deg, #2d3436, #636e72);"><i
+                                class="bi bi-disc-fill card-cover-icon"></i>
+                            <div class="card-play-overlay"><button class="card-play-btn"><i
+                                        class="bi bi-play-fill"></i></button></div><span class="card-badge">NEW</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Dark Matter</h3>
+                            <p class="card-artist">Cosmos</p>
+                        </div>
+                    </div>
+                    <div class="music-card card-3d" data-track="14">
+                        <div class="card-cover" style="background: linear-gradient(135deg, #e056a7, #c44569);"><i
+                                class="bi bi-disc-fill card-cover-icon"></i>
+                            <div class="card-play-overlay"><button class="card-play-btn"><i
+                                        class="bi bi-play-fill"></i></button></div><span class="card-badge">NEW</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Heartbeat</h3>
+                            <p class="card-artist">Stellar</p>
+                        </div>
+                    </div>
+                    <div class="music-card card-3d" data-track="15">
+                        <div class="card-cover" style="background: linear-gradient(135deg, #574b90, #303952);"><i
+                                class="bi bi-disc-fill card-cover-icon"></i>
+                            <div class="card-play-overlay"><button class="card-play-btn"><i
+                                        class="bi bi-play-fill"></i></button></div><span class="card-badge">NEW</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Purple Haze</h3>
+                            <p class="card-artist">Nebula X</p>
+                        </div>
+                    </div>
+                    <div class="music-card card-3d" data-track="16">
+                        <div class="card-cover" style="background: linear-gradient(135deg, #fc5c65, #eb3b5a);"><i
+                                class="bi bi-disc-fill card-cover-icon"></i>
+                            <div class="card-play-overlay"><button class="card-play-btn"><i
+                                        class="bi bi-play-fill"></i></button></div><span class="card-badge">NEW</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Inferno</h3>
+                            <p class="card-artist">FireBeast</p>
+                        </div>
+                    </div>
+                    <div class="music-card card-3d" data-track="17">
+                        <div class="card-cover" style="background: linear-gradient(135deg, #45aaf2, #2d98da);"><i
+                                class="bi bi-disc-fill card-cover-icon"></i>
+                            <div class="card-play-overlay"><button class="card-play-btn"><i
+                                        class="bi bi-play-fill"></i></button></div><span class="card-badge">NEW</span>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Blue Sky</h3>
+                            <p class="card-artist">Horizon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" data-page="tracks" id="pageTracks">
+            <div class="page-header">
+                <h1 class="page-title"><i class="bi bi-music-note-list"></i> Треки</h1>
+                <div class="page-filters">
+                    <button class="filter-chip active">Все</button>
+                    <button class="filter-chip">Популярные</button>
+                    <button class="filter-chip">По дате</button>
+                </div>
+            </div>
+            <div class="search-bar-inline"><i class="bi bi-search"></i><input type="text" placeholder="Найти трек...">
+            </div>
+            <div class="track-list">
+                <div class="track-item" data-track="7"><span class="track-rank">1</span>
+                    <div class="track-cover-sm" style="background: linear-gradient(135deg, #ff6b6b, #ee5a24);"></div>
+                    <div class="track-info"><span class="track-name">Neon Dreams</span><span class="track-artist">DJ
+                            Pulse</span></div><span class="track-duration">3:42</span><button
+                        class="track-action-btn"><i class="bi bi-heart"></i></button>
+                </div>
+                <div class="track-item" data-track="8"><span class="track-rank">2</span>
+                    <div class="track-cover-sm" style="background: linear-gradient(135deg, #a29bfe, #6c5ce7);"></div>
+                    <div class="track-info"><span class="track-name">Midnight City</span><span class="track-artist">Luna
+                            Wave</span></div><span class="track-duration">4:15</span><button class="track-action-btn"><i
+                            class="bi bi-heart"></i></button>
+                </div>
+                <div class="track-item" data-track="9"><span class="track-rank">3</span>
+                    <div class="track-cover-sm" style="background: linear-gradient(135deg, #fd79a8, #e84393);"></div>
+                    <div class="track-info"><span class="track-name">Розовый закат</span><span
+                            class="track-artist">АИГЕЛ</span></div><span class="track-duration">3:58</span><button
+                        class="track-action-btn"><i class="bi bi-heart"></i></button>
+                </div>
+                <div class="track-item" data-track="10"><span class="track-rank">4</span>
+                    <div class="track-cover-sm" style="background: linear-gradient(135deg, #00cec9, #0984e3);"></div>
+                    <div class="track-info"><span class="track-name">Ocean Waves</span><span
+                            class="track-artist">Synthex</span></div><span class="track-duration">5:03</span><button
+                        class="track-action-btn"><i class="bi bi-heart"></i></button>
+                </div>
+                <div class="track-item" data-track="11"><span class="track-rank">5</span>
+                    <div class="track-cover-sm" style="background: linear-gradient(135deg, #fdcb6e, #e17055);"></div>
+                    <div class="track-info"><span class="track-name">Golden Hour</span><span
+                            class="track-artist">SunBeam</span></div><span class="track-duration">3:21</span><button
+                        class="track-action-btn"><i class="bi bi-heart"></i></button>
+                </div>
+                <div class="track-item" data-track="12"><span class="track-rank">6</span>
+                    <div class="track-cover-sm" style="background: linear-gradient(135deg, #55efc4, #00b894);"></div>
+                    <div class="track-info"><span class="track-name">Forest Rain</span><span
+                            class="track-artist">NatureSound</span></div><span class="track-duration">4:47</span><button
+                        class="track-action-btn"><i class="bi bi-heart"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" data-page="genres" id="pageGenres">
+            <div class="page-header">
+                <h1 class="page-title"><i class="bi bi-grid-3x3-gap-fill"></i> Жанры</h1>
+            </div>
+            <div class="genres-grid">
+                <div class="genre-card card-3d" style="background: linear-gradient(135deg, #e94560, #c23152);"><i
+                        class="bi bi-speaker-fill genre-icon"></i><span class="genre-name">Поп</span></div>
+                <div class="genre-card card-3d" style="background: linear-gradient(135deg, #6c5ce7, #a29bfe);"><i
+                        class="bi bi-lightning-charge-fill genre-icon"></i><span class="genre-name">Рок</span></div>
+                <div class="genre-card card-3d" style="background: linear-gradient(135deg, #00b894, #55efc4);"><i
+                        class="bi bi-headphones genre-icon"></i><span class="genre-name">Хип-хоп</span></div>
+                <div class="genre-card card-3d" style="background: linear-gradient(135deg, #0984e3, #74b9ff);"><i
+                        class="bi bi-tsunami genre-icon"></i><span class="genre-name">Электро</span></div>
+                <div class="genre-card card-3d" style="background: linear-gradient(135deg, #fdcb6e, #e17055);"><i
+                        class="bi bi-music-note-beamed genre-icon"></i><span class="genre-name">Джаз</span></div>
+                <div class="genre-card card-3d" style="background: linear-gradient(135deg, #e84393, #fd79a8);"><i
+                        class="bi bi-vinyl-fill genre-icon"></i><span class="genre-name">R&B</span></div>
+                <div class="genre-card card-3d" style="background: linear-gradient(135deg, #2d3436, #636e72);"><i
+                        class="bi bi-fire genre-icon"></i><span class="genre-name">Метал</span></div>
+                <div class="genre-card card-3d" style="background: linear-gradient(135deg, #00cec9, #81ecec);"><i
+                        class="bi bi-cloud-sun-fill genre-icon"></i><span class="genre-name">Лоу-фай</span></div>
+                <div class="genre-card card-3d" style="background: linear-gradient(135deg, #d63031, #ff7675);"><i
+                        class="bi bi-globe-americas genre-icon"></i><span class="genre-name">Латино</span></div>
+                <div class="genre-card card-3d" style="background: linear-gradient(135deg, #636e72, #b2bec3);"><i
+                        class="bi bi-music-player-fill genre-icon"></i><span class="genre-name">Классика</span></div>
+                <div class="genre-card card-3d" style="background: linear-gradient(135deg, #e17055, #fab1a0);"><i
+                        class="bi bi-badge-cc-fill genre-icon"></i><span class="genre-name">Инди</span></div>
+                <div class="genre-card card-3d" style="background: linear-gradient(135deg, #a29bfe, #dfe6e9);"><i
+                        class="bi bi-moon-stars-fill genre-icon"></i><span class="genre-name">Дрим-поп</span></div>
+            </div>
+        </section>
+
+        <section class="page" data-page="new-releases" id="pageNewReleases">
+            <div class="page-header">
+                <h1 class="page-title"><i class="bi bi-stars"></i> Новинки</h1>
+                <div class="page-filters">
+                    <button class="filter-chip active">Сегодня</button>
+                    <button class="filter-chip">Эта неделя</button>
+                    <button class="filter-chip">Этот месяц</button>
+                </div>
+            </div>
+            <div class="cards-grid">
+                <div class="music-card card-3d" data-track="13">
+                    <div class="card-cover" style="background: linear-gradient(135deg, #2d3436, #636e72);"><i
+                            class="bi bi-disc-fill card-cover-icon"></i>
+                        <div class="card-play-overlay"><button class="card-play-btn"><i
+                                    class="bi bi-play-fill"></i></button></div><span class="card-badge">NEW</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Dark Matter</h3>
+                        <p class="card-artist">Cosmos</p>
+                    </div>
+                </div>
+                <div class="music-card card-3d" data-track="14">
+                    <div class="card-cover" style="background: linear-gradient(135deg, #e056a7, #c44569);"><i
+                            class="bi bi-disc-fill card-cover-icon"></i>
+                        <div class="card-play-overlay"><button class="card-play-btn"><i
+                                    class="bi bi-play-fill"></i></button></div><span class="card-badge">NEW</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Heartbeat</h3>
+                        <p class="card-artist">Stellar</p>
+                    </div>
+                </div>
+                <div class="music-card card-3d" data-track="15">
+                    <div class="card-cover" style="background: linear-gradient(135deg, #574b90, #303952);"><i
+                            class="bi bi-disc-fill card-cover-icon"></i>
+                        <div class="card-play-overlay"><button class="card-play-btn"><i
+                                    class="bi bi-play-fill"></i></button></div><span class="card-badge">NEW</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Purple Haze</h3>
+                        <p class="card-artist">Nebula X</p>
+                    </div>
+                </div>
+                <div class="music-card card-3d" data-track="16">
+                    <div class="card-cover" style="background: linear-gradient(135deg, #fc5c65, #eb3b5a);"><i
+                            class="bi bi-disc-fill card-cover-icon"></i>
+                        <div class="card-play-overlay"><button class="card-play-btn"><i
+                                    class="bi bi-play-fill"></i></button></div><span class="card-badge">NEW</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Inferno</h3>
+                        <p class="card-artist">FireBeast</p>
+                    </div>
+                </div>
+                <div class="music-card card-3d" data-track="17">
+                    <div class="card-cover" style="background: linear-gradient(135deg, #45aaf2, #2d98da);"><i
+                            class="bi bi-disc-fill card-cover-icon"></i>
+                        <div class="card-play-overlay"><button class="card-play-btn"><i
+                                    class="bi bi-play-fill"></i></button></div><span class="card-badge">NEW</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title"> Blue Sky</h3>
+                        <p class="card-artist">Horizon</p>
+                    </div>
+                </div>
+                <div class="music-card card-3d" data-track="31">
+                    <div class="card-cover" style="background: linear-gradient(135deg, #f7d794, #f3a683);"><i
+                            class="bi bi-disc-fill card-cover-icon"></i>
+                        <div class="card-play-overlay"><button class="card-play-btn"><i
+                                    class="bi bi-play-fill"></i></button></div><span class="card-badge">NEW</span>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Sunset Vibes</h3>
+                        <p class="card-artist">Mellow</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" data-page="channels" id="pageChannels">
+            <div class="page-header">
+                <h1 class="page-title"><i class="bi bi-broadcast-pin"></i> Каналы</h1>
+            </div>
+            <div class="cards-grid">
+                <div class="channel-card card-3d">
+                    <div class="channel-cover" style="background: linear-gradient(135deg, #e94560, #0f3460);"><i
+                            class="bi bi-broadcast"></i>
+                        <div class="channel-live-badge">LIVE</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Chill Vibes</h3>
+                        <p class="card-artist">24/7 Лоу-фай</p>
+                        <div class="channel-listeners"><i class="bi bi-headphones"></i> 1.2K</div>
+                    </div>
+                </div>
+                <div class="channel-card card-3d">
+                    <div class="channel-cover" style="background: linear-gradient(135deg, #6c5ce7, #fd79a8);"><i
+                            class="bi bi-broadcast"></i>
+                        <div class="channel-live-badge">LIVE</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Energy FM</h3>
+                        <p class="card-artist">Электро & Дэнс</p>
+                        <div class="channel-listeners"><i class="bi bi-headphones"></i> 3.4K</div>
+                    </div>
+                </div>
+                <div class="channel-card card-3d">
+                    <div class="channel-cover" style="background: linear-gradient(135deg, #00b894, #fdcb6e);"><i
+                            class="bi bi-broadcast"></i>
+                        <div class="channel-live-badge">LIVE</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Jazz Club</h3>
+                        <p class="card-artist">Джаз & Блюз</p>
+                        <div class="channel-listeners"><i class="bi bi-headphones"></i> 890</div>
+                    </div>
+                </div>
+                <div class="channel-card card-3d">
+                    <div class="channel-cover" style="background: linear-gradient(135deg, #e17055, #2d3436);"><i
+                            class="bi bi-broadcast"></i>
+                        <div class="channel-live-badge">LIVE</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Rock Arena</h3>
+                        <p class="card-artist">Рок & Альтернатива</p>
+                        <div class="channel-listeners"><i class="bi bi-headphones"></i> 2.1K</div>
+                    </div>
+                </div>
+                <div class="channel-card card-3d">
+                    <div class="channel-cover" style="background: linear-gradient(135deg, #0984e3, #00cec9);"><i
+                            class="bi bi-broadcast"></i>
+                        <div class="channel-live-badge">LIVE</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Synthwave FM</h3>
+                        <p class="card-artist">Ретро-электро</p>
+                        <div class="channel-listeners"><i class="bi bi-headphones"></i> 1.7K</div>
+                    </div>
+                </div>
+                <div class="channel-card card-3d">
+                    <div class="channel-cover" style="background: linear-gradient(135deg, #636e72, #a29bfe);"><i
+                            class="bi bi-broadcast"></i>
+                        <div class="channel-live-badge">LIVE</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Deep Focus</h3>
+                        <p class="card-artist">Для концентрации</p>
+                        <div class="channel-listeners"><i class="bi bi-headphones"></i> 5.6K</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" data-page="favorites" id="pageFavorites">
+            <div class="page-header">
+                <div class="favorites-hero">
+                    <div class="favorites-hero-bg" style="background: linear-gradient(135deg, #e94560, #6c5ce7);"></div>
+                    <div class="favorites-hero-content">
+                        <i class="bi bi-heart-fill favorites-hero-icon"></i>
+                        <div>
+                            <h1 class="page-title">Мне нравится</h1>
+                            <p class="favorites-count">24 трека</p>
+                        </div>
+                        <button class="btn-play-all"><i class="bi bi-play-fill"></i> Слушать все</button>
+                    </div>
+                </div>
+            </div>
+            <div class="track-list">
+                <div class="track-item" data-track="9"><span class="track-rank">1</span>
+                    <div class="track-cover-sm" style="background: linear-gradient(135deg, #fd79a8, #e84393);"></div>
+                    <div class="track-info"><span class="track-name">Розовый закат</span><span
+                            class="track-artist">АИГЕЛ</span></div><span class="track-duration">3:58</span><button
+                        class="track-action-btn"><i class="bi bi-heart-fill text-accent"></i></button>
+                </div>
+                <div class="track-item" data-track="8"><span class="track-rank">2</span>
+                    <div class="track-cover-sm" style="background: linear-gradient(135deg, #a29bfe, #6c5ce7);"></div>
+                    <div class="track-info"><span class="track-name">Midnight City</span><span class="track-artist">Luna
+                            Wave</span></div><span class="track-duration">4:15</span><button class="track-action-btn"><i
+                            class="bi bi-heart-fill text-accent"></i></button>
+                </div>
+                <div class="track-item" data-track="10"><span class="track-rank">3</span>
+                    <div class="track-cover-sm" style="background: linear-gradient(135deg, #00cec9, #0984e3);"></div>
+                    <div class="track-info"><span class="track-name">Ocean Waves</span><span
+                            class="track-artist">Synthex</span></div><span class="track-duration">5:03</span><button
+                        class="track-action-btn"><i class="bi bi-heart-fill text-accent"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" data-page="playlists" id="pagePlaylists">
+            <div class="page-header">
+                <h1 class="page-title"><i class="bi bi-collection-play-fill"></i> Плейлисты</h1>
+                <button class="btn-create-playlist"><i class="bi bi-plus-lg"></i> Создать</button>
+            </div>
+            <div class="cards-grid">
+                <div class="playlist-card card-3d">
+                    <div class="playlist-cover" style="background: linear-gradient(135deg, #667eea, #764ba2);"><i
+                            class="bi bi-music-note-list"></i>
+                        <div class="card-play-overlay"><button class="card-play-btn"><i
+                                    class="bi bi-play-fill"></i></button></div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Мой микс #1</h3>
+                        <p class="card-artist">32 трека</p>
+                    </div>
+                </div>
+                <div class="playlist-card card-3d">
+                    <div class="playlist-cover" style="background: linear-gradient(135deg, #f093fb, #f5576c);"><i
+                            class="bi bi-music-note-list"></i>
+                        <div class="card-play-overlay"><button class="card-play-btn"><i
+                                    class="bi bi-play-fill"></i></button></div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Вечерний чилл</h3>
+                        <p class="card-artist">18 треков</p>
+                    </div>
+                </div>
+                <div class="playlist-card card-3d">
+                    <div class="playlist-cover" style="background: linear-gradient(135deg, #4facfe, #00f2fe);"><i
+                            class="bi bi-music-note-list"></i>
+                        <div class="card-play-overlay"><button class="card-play-btn"><i
+                                    class="bi bi-play-fill"></i></button></div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Для тренировки</h3>
+                        <p class="card-artist">45 треков</p>
+                    </div>
+                </div>
+                <div class="playlist-card card-3d">
+                    <div class="playlist-cover" style="background: linear-gradient(135deg, #fa709a, #fee140);"><i
+                            class="bi bi-music-note-list"></i>
+                        <div class="card-play-overlay"><button class="card-play-btn"><i
+                                    class="bi bi-play-fill"></i></button></div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Road Trip</h3>
+                        <p class="card-artist">56 треков</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" data-page="saved" id="pageSaved">
+            <div class="page-header">
+                <h1 class="page-title"><i class="bi bi-bookmark-star-fill"></i> Избранное</h1>
+            </div>
+            <div class="cards-grid">
+                <div class="saved-card card-3d">
+                    <div class="saved-cover" style="background: linear-gradient(135deg, #e94560, #c23152);"><i
+                            class="bi bi-bookmark-star-fill saved-icon"></i></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Best of 2025</h3>
+                        <p class="card-artist">Альбом · Various Artists</p>
+                    </div>
+                </div>
+                <div class="saved-card card-3d">
+                    <div class="saved-cover" style="background: linear-gradient(135deg, #6c5ce7, #a29bfe);"><i
+                            class="bi bi-bookmark-star-fill saved-icon"></i></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Synthwave Essentials</h3>
+                        <p class="card-artist">Плейлист · FMR Editorial</p>
+                    </div>
+                </div>
+                <div class="saved-card card-3d">
+                    <div class="saved-cover" style="background: linear-gradient(135deg, #00b894, #55efc4);"><i
+                            class="bi bi-bookmark-star-fill saved-icon"></i></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Jazz Classics</h3>
+                        <p class="card-artist">Альбом · Miles Davis</p>
+                    </div>
+                </div>
+                <div class="saved-card card-3d">
+                    <div class="saved-cover" style="background: linear-gradient(135deg, #0984e3, #74b9ff);"><i
+                            class="bi bi-bookmark-star-fill saved-icon"></i></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Ambient Dreams</h3>
+                        <p class="card-artist">Плейлист · Cosmos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" data-page="history" id="pageHistory">
+            <div class="page-header">
+                <h1 class="page-title"><i class="bi bi-clock-history"></i> История</h1>
+                <button class="btn-clear-history"><i class="bi bi-trash3"></i> Очистить</button>
+            </div>
+            <div class="history-section">
+                <h3 class="history-date">Сегодня</h3>
+                <div class="track-list">
+                    <div class="track-item" data-track="7">
+                        <div class="track-cover-sm" style="background: linear-gradient(135deg, #ff6b6b, #ee5a24);">
+                        </div>
+                        <div class="track-info"><span class="track-name">Neon Dreams</span><span class="track-artist">DJ
+                                Pulse</span></div><span class="track-time-ago">2 мин назад</span><button
+                            class="track-action-btn"><i class="bi bi-three-dots-vertical"></i></button>
+                    </div>
+                    <div class="track-item" data-track="8">
+                        <div class="track-cover-sm" style="background: linear-gradient(135deg, #a29bfe, #6c5ce7);">
+                        </div>
+                        <div class="track-info"><span class="track-name">Midnight City</span><span
+                                class="track-artist">Luna Wave</span></div><span class="track-time-ago">15 мин
+                            назад</span><button class="track-action-btn"><i
+                                class="bi bi-three-dots-vertical"></i></button>
+                    </div>
+                    <div class="track-item" data-track="9">
+                        <div class="track-cover-sm" style="background: linear-gradient(135deg, #fd79a8, #e84393);">
+                        </div>
+                        <div class="track-info"><span class="track-name">Розовый закат</span><span
+                                class="track-artist">АИГЕЛ</span></div><span class="track-time-ago">1 час
+                            назад</span><button class="track-action-btn"><i
+                                class="bi bi-three-dots-vertical"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="history-section">
+                <h3 class="history-date">Вчера</h3>
+                <div class="track-list">
+                    <div class="track-item" data-track="10">
+                        <div class="track-cover-sm" style="background: linear-gradient(135deg, #00cec9, #0984e3);">
+                        </div>
+                        <div class="track-info"><span class="track-name">Ocean Waves</span><span
+                                class="track-artist">Synthex</span></div><span
+                            class="track-time-ago">вчера</span><button class="track-action-btn"><i
+                                class="bi bi-three-dots-vertical"></i></button>
+                    </div>
+                    <div class="track-item" data-track="11">
+                        <div class="track-cover-sm" style="background: linear-gradient(135deg, #fdcb6e, #e17055);">
+                        </div>
+                        <div class="track-info"><span class="track-name">Golden Hour</span><span
+                                class="track-artist">SunBeam</span></div><span
+                            class="track-time-ago">вчера</span><button class="track-action-btn"><i
+                                class="bi bi-three-dots-vertical"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="player-bar" id="playerBar">
+        <div class="player-progress-wrapper" id="progressWrapper">
+            <div class="player-progress" id="playerProgress"></div>
+        </div>
+        <div class="player-content">
+            <div class="player-track-info">
+                <div class="player-cover" id="playerCover"
+                    style="background: linear-gradient(135deg, #7c3aed, #a78bfa);"><i
+                        class="bi bi-music-note-beamed"></i></div>
+                <div class="player-details">
+                    <span class="player-track-name" id="playerTrackName">Neon Dreams</span>
+                    <span class="player-artist-name" id="playerArtistName">DJ Pulse</span>
+                </div>
+                <button class="player-like-btn" id="playerLikeBtn"><i class="bi bi-heart"></i></button>
+            </div>
+            <div class="player-controls">
+                <button class="player-btn" id="prevBtn"><i class="bi bi-skip-start-fill"></i></button>
+                <button class="player-btn player-btn-main" id="playPauseBtn"><i class="bi bi-play-fill"
+                        id="playIcon"></i></button>
+                <button class="player-btn" id="nextBtn"><i class="bi bi-skip-end-fill"></i></button>
+            </div>
+            <div class="player-extra d-none d-md-flex">
+                <span class="player-time" id="playerTime">0:00 / 3:42</span>
+                <div class="player-volume">
+                    <button class="player-btn" id="volumeBtn"><i class="bi bi-volume-up-fill"></i></button>
+                    <div class="volume-slider-wrapper">
+                        <div class="volume-slider" id="volumeSlider">
+                            <div class="volume-level" id="volumeLevel"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="player-btn" id="shuffleBtn"><i class="bi bi-shuffle"></i></button>
+                <button class="player-btn" id="repeatBtn"><i class="bi bi-repeat"></i></button>
+            </div>
+        </div>
+    </footer>
+
+    <nav class="mobile-nav d-md-none" id="mobileNav">
+        <a href="#" class="mobile-nav-item active" data-page="home"><i
+                class="bi bi-house-heart-fill"></i><span>Главная</span></a>
+        <a href="#" class="mobile-nav-item" data-page="tracks"><i
+                class="bi bi-music-note-list"></i><span>Треки</span></a>
+        <a href="#" class="mobile-nav-item" data-page="genres"><i
+                class="bi bi-grid-3x3-gap-fill"></i><span>Жанры</span></a>
+        <a href="#" class="mobile-nav-item" data-page="favorites"><i
+                class="bi bi-heart-fill"></i><span>Нравится</span></a>
+        <a href="#" class="mobile-nav-item" data-page="history"><i
+                class="bi bi-person-circle"></i><span>Профиль</span></a>
+    </nav>
+
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-overlay-header">
+            <button class="btn-icon" id="searchClose"><i class="bi bi-arrow-left"></i></button>
+            <input type="text" placeholder="Поиск..." class="search-overlay-input" id="searchOverlayInput">
+        </div>
+        <div class="search-overlay-body">
+            <p class="search-hint">Введите название трека, артиста или альбома</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
