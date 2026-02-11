@@ -259,6 +259,13 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // Generic page navigation (Header profile, Sidebar footer, etc.)
+        const navTarget = e.target.closest('[data-page]:not(.page):not(.sidebar-link):not(.mobile-nav-item):not(.see-all-link):not(.quick-card)');
+        if (navTarget) {
+            showPage(navTarget.dataset.page);
+            return;
+        }
+
         // Music cards with track loading
         const card = e.target.closest('[data-track]');
         if (card) {

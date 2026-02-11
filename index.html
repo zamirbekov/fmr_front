@@ -38,7 +38,7 @@
             <a href="#" class="sidebar-link" data-page="history"><i
                     class="bi bi-clock-history"></i><span>История</span></a>
         </nav>
-        <div class="sidebar-footer">
+        <div class="sidebar-footer" data-page="history" style="cursor: pointer;">
             <div class="user-avatar"><i class="bi bi-person-circle"></i></div><span>Гость</span>
         </div>
     </aside>
@@ -48,8 +48,8 @@
             <div class="d-flex align-items-center justify-content-between w-100 px-3">
                 <div class="mobile-logo"><i class="bi bi-soundwave"></i> FMR</div>
                 <div class="mobile-header-actions">
+                    <button class="btn-icon" data-page="history"><i class="bi bi-person-circle"></i></button>
                     <button class="btn-icon" id="searchToggle"><i class="bi bi-search"></i></button>
-                    <button class="btn-icon"><i class="bi bi-bell"></i></button>
                 </div>
             </div>
         </header>
@@ -168,7 +168,7 @@
             <div class="section-block">
                 <div class="section-header">
                     <h2 class="section-title"><i class="bi bi-people-fill text-info"></i> Популярные исполнители</h2>
-                    <a href="#" class="see-all-link">Все <i class="bi bi-chevron-right"></i></a>
+                    <a href="#" class="see-all-link" data-page="artists">Все <i class="bi bi-chevron-right"></i></a>
                 </div>
                 <div class="cards-scroll">
                     <div class="music-card card-3d">
@@ -437,6 +437,54 @@
                     <div class="card-body">
                         <h3 class="card-title">Sunset Vibes</h3>
                         <p class="card-artist">Mellow</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page" data-page="artists" id="pageArtists">
+            <div class="page-header">
+                <h1 class="page-title"><i class="bi bi-people-fill"></i> Исполнители</h1>
+            </div>
+            <div class="cards-grid">
+                <div class="music-card card-3d">
+                    <div class="card-cover" style="background: linear-gradient(135deg, #667eea, #764ba2);"><i
+                            class="bi bi-person-fill card-cover-icon"></i></div>
+                    <div class="card-body">
+                        <h3 class="card-title">DJ Pulse</h3>
+                        <p class="card-artist">Электро</p>
+                    </div>
+                </div>
+                <div class="music-card card-3d">
+                    <div class="card-cover" style="background: linear-gradient(135deg, #f093fb, #f5576c);"><i
+                            class="bi bi-person-fill card-cover-icon"></i></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Luna Wave</h3>
+                        <p class="card-artist">Synthwave</p>
+                    </div>
+                </div>
+                <div class="music-card card-3d">
+                    <div class="card-cover" style="background: linear-gradient(135deg, #4facfe, #00f2fe);"><i
+                            class="bi bi-person-fill card-cover-icon"></i></div>
+                    <div class="card-body">
+                        <h3 class="card-title">АИГЕЛ</h3>
+                        <p class="card-artist">Альтернатива</p>
+                    </div>
+                </div>
+                <div class="music-card card-3d">
+                    <div class="card-cover" style="background: linear-gradient(135deg, #fa709a, #fee140);"><i
+                            class="bi bi-person-fill card-cover-icon"></i></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Synthex</h3>
+                        <p class="card-artist">Ambient</p>
+                    </div>
+                </div>
+                <div class="music-card card-3d">
+                    <div class="card-cover" style="background: linear-gradient(135deg, #a18cd1, #fbc2eb);"><i
+                            class="bi bi-person-fill card-cover-icon"></i></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Cosmos</h3>
+                        <p class="card-artist">Электроника</p>
                     </div>
                 </div>
             </div>
@@ -748,8 +796,8 @@
                 class="bi bi-grid-3x3-gap-fill"></i><span>Жанры</span></a>
         <a href="#" class="mobile-nav-item" data-page="favorites"><i
                 class="bi bi-heart-fill"></i><span>Нравится</span></a>
-        <a href="#" class="mobile-nav-item" data-page="history"><i
-                class="bi bi-person-circle"></i><span>Профиль</span></a>
+        <a href="#" class="mobile-nav-item" data-page="playlists"><i
+                class="bi bi-collection-play-fill"></i><span>Плейлисты</span></a>
     </nav>
 
     <div class="search-overlay" id="searchOverlay">
